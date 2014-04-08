@@ -17,7 +17,7 @@ away = False
 import hexchat
 import time
 
-nick = ["sentriz", "[A]"] # default nick, and away suffix to be added to it
+nick = ["yourNick", "[A]"] # default nick, and away suffix to be added to it
 time_zone = "UTC0" # your home time-zone for away time
 talk_threshold = 4 # number of times you can talk before you're set back
 
