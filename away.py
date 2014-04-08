@@ -68,7 +68,7 @@ def autoback_cb(word, word_eol, userdata):
         warning = "talked {}/{} times while away".format(talk_count,talk_threshold)
         print("* [" + warning + "]")
         if talk_count == talk_threshold: 
-            hexchat.prnt(str_prefix + "You will be set back. ({})".format(warning))
+            hexchat.prnt(str_prefix + "You will be set back.. ({})".format(warning))
             hexchat.command(BACKCMD)
 
 AWAYCMD, BACKCMD = "hcaway", "hcback" #because of autoback_cb
