@@ -1,5 +1,5 @@
 __module_name__ = "HexChat Away"
-__module_version__ = "5.2"
+__module_version__ = "5.3"
 __module_description__ = "Suffixes your nick and marks you away."
 __author__ = "sentriz"
 
@@ -19,7 +19,7 @@ import time
 
 nick = ["yourNick", "[A]"] # default nick, and away suffix to be added to it
 time_zone = "UTC0" # your home time-zone for away time
-talk_threshold = 4 # number of times you can talk before you're set back
+talk_threshold = 4 # number of times you can talk before you're set back (set to 0 to turn off autoback)
 
 def away_cb(word, word_eol, userdata):
     global away, talk_count
@@ -63,7 +63,7 @@ def back_cb(word, word_eol, userdata):
 
 def autoback_cb(word, word_eol, userdata):
     global talk_count
-    if away == True:
+    if away == True and talk_threshold != 0:
         talk_count += 1
         warning = "talked {}/{} times while away".format(talk_count,talk_threshold)
         print("* [" + warning + "]")
